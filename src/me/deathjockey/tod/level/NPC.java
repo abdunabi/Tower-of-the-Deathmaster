@@ -3,12 +3,14 @@ package me.deathjockey.tod.level;
 import me.deathjockey.tod.screen.Art;
 import me.deathjockey.tod.screen.Bitmap;
 import me.deathjockey.tod.screen.UI;
+import me.deathjockey.tod.sound.Sound;
 
 public class NPC extends Entity {
 
 	public String title;
 	public String[] text;
 	public boolean disappear;
+	public int type;
 	
 	public NPC(String title, String text, boolean disappear, int type) {
 		super("", "", 1, 0, 1000000, 0, 0);
@@ -16,6 +18,7 @@ public class NPC extends Entity {
 		this.text = text.split("#");
 		hostile = false;
 		this.disappear = disappear;
+		this.type = type;
 		switch(type) {
 		case 0:
 			frames = new Bitmap[] { Art.sprites[0][12], Art.sprites[1][12] };
@@ -32,11 +35,15 @@ public class NPC extends Entity {
 		case 4:
 			frames = new Bitmap[] { Art.sprites[2][12], Art.sprites[3][12] };
 			break;
+		case 5:
+			frames = new Bitmap[] { Art.sprites[3][4] };
+			break;
 		}
 	}
 	
 	public void interact(Player player) {
 		UI.npc(this, player);
 		player.move(player.invertDir(player.dir),1);
+		if(type == 5) Sound.event.play();
 	}
 }

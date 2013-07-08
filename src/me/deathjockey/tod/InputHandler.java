@@ -46,6 +46,8 @@ public class InputHandler implements KeyListener {
 	public Key cursor_down = new Key();
 	public Key confirm = new Key();
 	public Key escape = new Key();
+
+	public Key shift = new Key();
 	
 	public InputHandler(TowerComponent game) {
 		game.addKeyListener(this);
@@ -83,6 +85,8 @@ public class InputHandler implements KeyListener {
 		if(k == KeyEvent.VK_SPACE) confirm.toggle(pressed);
 		if(k == KeyEvent.VK_ESCAPE) escape.toggle(pressed);
 		if(k == KeyEvent.VK_ENTER) enter.toggle(pressed);
+		
+		if(k == KeyEvent.VK_SHIFT) shift.toggle(pressed);
 		
 		if(k == KeyEvent.VK_L) use_rod.toggle(pressed);
 	}

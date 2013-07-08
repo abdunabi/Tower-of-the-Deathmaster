@@ -9,7 +9,7 @@ public class Screen extends Bitmap {
 	
 	public Screen(int w, int h) {
 		super(w, h);
-		image = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
+		image = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
 		pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
 	}
 

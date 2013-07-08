@@ -148,8 +148,10 @@ public class TowerComponent extends Canvas implements Runnable, MouseListener, M
 			}
 		}
 		
-		Font.draw(screen, hx + "," + hy, 10, 10);
-		Font.draw(screen, "X", hx * Tile.SIZE + Level.X_OFFSET + (Tile.SIZE / 2 - 7) , Level.Y_OFFSET + hy * Tile.SIZE + (Tile.SIZE / 2 - 7));
+		if(input.shift.down) {
+			Font.draw(screen, hx + "," + hy, 10, 10);
+			Font.draw(screen, "X", hx * Tile.SIZE + Level.X_OFFSET + (Tile.SIZE / 2 - 7) , Level.Y_OFFSET + hy * Tile.SIZE + (Tile.SIZE / 2 - 7));
+		}
 		
 		UI.extraOverlay(screen);
 		

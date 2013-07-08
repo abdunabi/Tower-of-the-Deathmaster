@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import me.deathjockey.tod.screen.Art;
 import me.deathjockey.tod.screen.Screen;
 
 public class Level {
@@ -19,6 +20,10 @@ public class Level {
 	public Player player;
 	public static final int Y_OFFSET = 1 * Tile.SIZE, X_OFFSET = 7 * Tile.SIZE;
 	
+	private int entranceX = 0, entranceY = 0;
+	private boolean madeEntrance = false, maskOver = false;
+	private long entranceTimer;
+	
 	public Level() {
 		tiles = new int[12][13];
 	}
@@ -32,8 +37,17 @@ public class Level {
 		
 		for(Entity e : entities) {
 			e.render(screen);
-			
 		}
+		
+		if(madeEntrance && !maskOver) 
+			for(int i = 0; i < 12; i++) {
+				for(int j = 0; j < 13; j++) {
+					if(i == entranceX && j == entranceY) {} 
+					else {
+						screen.render(Art.sprites[3][1], i * Tile.SIZE + X_OFFSET, j * Tile.SIZE + Y_OFFSET);
+					}
+				}
+			}
 	}
 	
 	public void tick() {
@@ -43,17 +57,28 @@ public class Level {
 				entities.remove(i);
 			}
 		}
+		if(player != null) {
+			entranceX = player.x;
+			entranceY = player.y;
+		}
+		
+		if(madeEntrance && !maskOver) {
+			if(System.currentTimeMillis() - entranceTimer > 2000) {
+				maskOver = true;
+			}
+		}
 	}
 
 	public void addEntity(Entity entity) {
 		entities.add(entity);
 		if(entity instanceof Player) {
 			this.player = (Player) entity;
-//			entities.add(entity);
+			entranceX = entity.x;
+			entranceY = entity.y;
+			madeEntrance= true;
+			maskOver = false;
+			entranceTimer = System.currentTimeMillis();
 		}
-//		if((entity instanceof Stairs)) {
-//			entities.add(entity);
-//		}
 	}
 
 	public Tile getTileAt(int i, int j) {

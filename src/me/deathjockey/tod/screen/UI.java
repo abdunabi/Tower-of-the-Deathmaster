@@ -53,13 +53,24 @@ public class UI {
 		screen.render(Art.sprites[14][12], 45, 45);
 		
 		Font.draw(screen, "Lv:" + player.get("stat.level"), 80, 60);
-		Font.draw(screen, "HP :" + player.get("stat.hp"), 45, 100);
-		Font.draw(screen, "Atk:" + player.get("stat.attack"), 45, 130);
-		Font.draw(screen, "Def:" + player.get("stat.defense"), 45, 160);
-		Font.draw(screen, "Gld:" + player.get("stat.gold"), 45, 190);
-		Font.draw(screen, "Exp:" + player.get("stat.exp"), 45, 220);
 		
-		Font.draw(screen, "Flr:" + floor, 45, 260);
+		screen.render(Art.sprites[3][2], 40, 90);
+		Font.draw(screen, "   " + player.get("stat.hp"), 40, 100);
+		
+		screen.render(Art.sprites[0][8], 40, 120);
+		Font.draw(screen, "   " + player.get("stat.attack"), 40, 130);
+		
+		screen.render(Art.sprites[0][10], 40, 150);
+		Font.draw(screen, "   " + player.get("stat.defense"), 40, 160);
+		
+		screen.render(Art.sprites[2][4], 40, 180);
+		Font.draw(screen, "   " + player.get("stat.gold"), 40, 190);
+		
+		screen.render(Art.sprites[1][4], 40, 215);
+		Font.draw(screen, "   " + player.get("stat.exp"), 40, 220);
+		
+		screen.render(Art.sprites[4][5], 40, 250);
+		Font.draw(screen, "   " + floor, 40, 260);
 		
 		Font.draw(screen, "X "+ player.get("key.yellow"), 85, 330);
 		Font.draw(screen, "X " + player.get("key.blue"), 85, 360);
@@ -69,8 +80,17 @@ public class UI {
 		
 	}
 	
+	private static void dimOuter(Screen screen) {
+//		for(int i = 0; i < TowerComponent.WIDTH / Tile.SIZE; i++) {
+//			for(int j = 0; j < TowerComponent.HEIGHT / Tile.SIZE; j++) {
+//				screen.render(Art.sprites[3][3], i * Tile.SIZE, j * Tile.SIZE);
+//			}
+//		}
+	}
+	
 	public static void extraOverlay(Screen screen) {
 		if(hascombat) {
+			dimOuter(screen);
 			for(int i = 0; i < 14; i++) {
 				for(int j = 0; j < 8; j++) {
 					if(i == 0 || i == 13 || j == 0 || j == 7) screen.render(Art.sprites[0][0], (i + 3) * Tile.SIZE, (j + 3) * Tile.SIZE);
@@ -80,13 +100,20 @@ public class UI {
 			Font.draw(screen, "Fighting " + combatEntity.name, TowerComponent.WIDTH / 2 - Font.getStringWidth("Fighting " + combatEntity.name) / 2, 105);
 			screen.render(Art.sprites[14][12], 450, 140);
 			combatEntity.render(screen, 150, 140);
-			Font.draw(screen, "HP :" + combatEntity.hp, 140, 200);
-			Font.draw(screen, "Atk:" + combatEntity.attack, 140, 240);
-			Font.draw(screen, "Def:" + combatEntity.defense, 140, 280);
+			
+			screen.render(Art.sprites[3][2], 140, 190);
+			Font.draw(screen, "   " + combatEntity.hp, 140, 200);
+			
+			screen.render(Art.sprites[0][8], 140, 230);
+			Font.draw(screen, "   " + combatEntity.attack, 140, 240);
+			
+			screen.render(Art.sprites[0][10], 140, 270);
+			Font.draw(screen, "   " + combatEntity.defense, 140, 280);
+			
 			screen.render(Art.pk, 240, 140);
-			Font.draw(screen, ": HP" , 450, 200);
-			Font.draw(screen, ":Atk" , 450, 240);
-			Font.draw(screen, ":Def" , 450, 280);
+			screen.render(Art.sprites[3][2], 450, 190);
+			screen.render(Art.sprites[0][8], 450, 230);
+			screen.render(Art.sprites[0][10], 450, 270);
 			
 			Font.draw(screen, player.get("stat.hp") + "" , 430 - Font.getStringWidth(player.get("stat.hp") + ""), 200);
 			Font.draw(screen, player.get("stat.attack") + "" , 430 - Font.getStringWidth(player.get("stat.attack") + ""), 240);
@@ -102,36 +129,37 @@ public class UI {
 			
 		}
 		if(hasshop) {
-			if(hasshop) {
-				for(int i = 0; i < 14; i++) {
-					for(int j = 0; j < 10; j++) {
-						if(i == 0 || i == 13 || j == 0 || j == 9) screen.render(Art.sprites[0][0], (i + 3) * Tile.SIZE, (j + 2) * Tile.SIZE);
-						else screen.render(Art.sprites[3][0], (i + 3) * Tile.SIZE, (j + 2) * Tile.SIZE);
-					}
+			dimOuter(screen);
+			for(int i = 0; i < 14; i++) {
+				for(int j = 0; j < 10; j++) {
+					if(i == 0 || i == 13 || j == 0 || j == 9) screen.render(Art.sprites[0][0], (i + 3) * Tile.SIZE, (j + 2) * Tile.SIZE);
+					else screen.render(Art.sprites[3][0], (i + 3) * Tile.SIZE, (j + 2) * Tile.SIZE);
 				}
-				Font.draw(screen, "- God of War -", TowerComponent.WIDTH / 2 - Font.getStringWidth("- God of War -") / 2, 75);
-				screen.render(Art.sprites[8][6], 96, 64);
-				screen.render(Art.sprites[8][5], 96, 64);
-				if(page == 0) {
-					Font.draw(screen, "Mortals, I can grant you power", 140, 110);
-					Font.draw(screen, "if you give me gold.", 140, 130);
-					Font.draw(screen, "Press 2 and 8 to navigate", 140, 190);
-					Font.draw(screen, "and use SPACE to select!", 140, 210);
-					Font.draw(screen, "press ESC to exit window!", 140, 230);
-					Font.draw(screen, "I don't do refunds, sorry!", 140, 250);
-					Font.draw(screen, "- Press Enter -", 140, 320);
-				} else {
-					Font.draw(screen, "How may I help you, mortal?", TowerComponent.WIDTH / 2 - Font.getStringWidth("How may I help you, mortal?") / 2, 110);
-					for(int i = 0; i < shop.sellList.size(); i++) {
-						Font.draw(screen, shop.sale.get(shop.sellList.get(i)) + " " + shop.sellList.get(i).replace("stat.", "") + " for " + shop.price.get(i) + ((shop.use == 0) ? " GLD" : " EXP"), TowerComponent.WIDTH / 2 - Font.getStringWidth(shop.sale.get(shop.sellList.get(i)) + " " + shop.sellList.get(i).replace("stat.", "") + " for " + shop.price.get(i) + ((shop.use == 0) ? " GLD" : " EXP")) / 2, 200 + i * 50);
-					}
-					screen.render(Art.sprites[10][4], 145, 190 + selection * 50);
-				}
-				
 			}
+			Font.draw(screen, "- God of War -", TowerComponent.WIDTH / 2 - Font.getStringWidth("- God of War -") / 2, 75);
+			screen.render(Art.sprites[8][6], 96, 64);
+			screen.render(Art.sprites[8][5], 96, 64);
+			if(page == 0) {
+				Font.draw(screen, "Mortals, I can grant you power", 140, 110);
+				Font.draw(screen, "if you give me gold.", 140, 130);
+				Font.draw(screen, "Press 2 and 8 to navigate", 140, 190);
+				Font.draw(screen, "and use SPACE to select!", 140, 210);
+				Font.draw(screen, "press ESC to exit window!", 140, 230);
+				Font.draw(screen, "I don't do refunds, sorry!", 140, 250);
+				Font.draw(screen, "- Press Enter -", 140, 320);
+			} else {
+				Font.draw(screen, "How may I help you, mortal?", TowerComponent.WIDTH / 2 - Font.getStringWidth("How may I help you, mortal?") / 2, 110);
+				for(int i = 0; i < shop.sellList.size(); i++) {
+					Font.draw(screen, shop.sale.get(shop.sellList.get(i)) + " " + shop.sellList.get(i).replace("stat.", "") + " for " + shop.price.get(i) + ((shop.use == 0) ? " GLD" : " EXP"), TowerComponent.WIDTH / 2 - Font.getStringWidth(shop.sale.get(shop.sellList.get(i)) + " " + shop.sellList.get(i).replace("stat.", "") + " for " + shop.price.get(i) + ((shop.use == 0) ? " GLD" : " EXP")) / 2, 200 + i * 50);
+				}
+				screen.render(Art.sprites[10][4], 145, 190 + selection * 50);
+			}
+			
 		}
 		
+		
 		if(hasdialog) {
+			dimOuter(screen);
 			for(int i = 0; i < 14; i++) {
 				for(int j = 0; j < 10; j++) {
 					if(i == 0 || i == 13 || j == 0 || j == 9) screen.render(Art.sprites[0][0], (i + 3) * Tile.SIZE, (j + 2) * Tile.SIZE);
@@ -184,6 +212,7 @@ public class UI {
 		
 		if(hascombat && System.currentTimeMillis() - lastHit > hitint) {
 			if(won) return;
+			if(player != null) player.canmove = false;
 			switch(turn) {
 			case 0:
 				int ch = (int) (Math.random() * 15);
@@ -201,6 +230,9 @@ public class UI {
 				hit = 1;
 				lastHit += hitint;
 				turn = 1;
+				
+				c = false;
+				
 				if(c) {
 					Sound.criticalHit.play();
 				} else {
@@ -242,7 +274,7 @@ public class UI {
 					else selection = 0;
 					Sound.select.play();
 					lastkp += kpint;
-				} else if(System.currentTimeMillis() - lastkp > kpint) lastkp += kpint;
+				} else if(System.currentTimeMillis() - lastkp > 2 * kpint) lastkp += kpint;
 			}
 			else if(input.cursor_down.down) {
 				if(System.currentTimeMillis() - lastkp > kpint) {
@@ -250,7 +282,7 @@ public class UI {
 					else selection = selllen - 1;
 					Sound.select.play();
 					lastkp += kpint;
-				} else if(System.currentTimeMillis() - lastkp > kpint) lastkp += kpint;
+				} else if(System.currentTimeMillis() - lastkp > 2 * kpint) lastkp += kpint;
 			}
 			else if(input.escape.down) {
 				hasshop = false;
@@ -271,13 +303,13 @@ public class UI {
 						verbose("Cannot purchase! This costs " + shop.price.get(selection) + "!");
 					}
 					lastkp += kpint;
-				} else if(System.currentTimeMillis() - lastkp > kpint) lastkp += kpint;
+				} else if(System.currentTimeMillis() - lastkp > 2 * kpint) lastkp += kpint;
 			}
 			else {
-				if(System.currentTimeMillis() - lastkp > kpint) lastkp += kpint;
+				if(System.currentTimeMillis() - lastkp > 2 * kpint) lastkp += kpint;
 			}
 		} else {
-			if(System.currentTimeMillis() - lastkp > kpint) lastkp += kpint;
+			if(System.currentTimeMillis() - lastkp >  2 * kpint) lastkp += kpint;
 		}
 		if(hasdialog) {
 			if(input.confirm.down) {
@@ -307,12 +339,12 @@ public class UI {
 					pagetoggle += pageint;
 				}
 			} else {
-				if(System.currentTimeMillis() - pagetoggle > pageint) {
+				if(System.currentTimeMillis() - pagetoggle > 2 * pageint) {
 					pagetoggle += pageint;
 				}
 			}
 		} else {
-			if(System.currentTimeMillis() - pagetoggle > pageint) {
+			if(System.currentTimeMillis() - pagetoggle > 2 * pageint) {
 				pagetoggle += pageint;
 			}
 		}
@@ -325,7 +357,7 @@ public class UI {
 	static short hit = -1;
 	static boolean hascombat = false, won = false;
 	static long lastHit, lastWin;
-	static short hitint = 250, turn = 0;
+	static short hitint = 10, turn = 0;
 
 	public static void combat(Player player, Entity monster) {
 		if(Combat.calculateDamage(player, monster) < 0) {

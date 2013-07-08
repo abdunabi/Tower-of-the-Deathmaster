@@ -35,22 +35,39 @@ public class Player extends Entity {
 	
 	public Player(InputHandler input, TowerComponent game, Level level) {
 		super("Player", "", 1, 10, 10, 0, 0);
-		put("stat.hp", 15897);
-		put("stat.level", 27);
-		put("stat.attack", 680);
-		put("stat.defense", 561);
-		put("stat.exp", 67);
-		put("stat.gold", 23);
-		put("key.yellow", 5);
-		put("key.blue", 6);
-		put("key.red", 1);
+//		put("stat.hp", 9240);
+//		put("stat.level", 11);
+//		put("stat.attack", 801);
+//		put("stat.defense", 468);
+//		put("stat.exp", 17);
+//		put("stat.gold", 18);
+//		put("key.yellow", 14);
+//		put("key.blue", 16);
+//		put("key.red", 11);
+//		put("key.green", 10);
+//		put("item.rod", 1);
+//		put("item.rustykey", 1);
+//		put("item.soulkey", 0);
+//		put("item.cross", 0);
+//		//pots
+//		put("item.tinctureofice", 1);
+		
+		put("stat.hp", 1000);
+		put("stat.level", 1);
+		put("stat.attack", 10);
+		put("stat.defense", 10);
+		put("stat.exp", 0);
+		put("stat.gold", 0);
+		put("key.yellow", 0);
+		put("key.blue", 0);
+		put("key.red", 0);
 		put("key.green", 0);
 		put("item.rod", 1);
-		put("item.rustykey", 1);
+		put("item.rustykey", 0);
 		put("item.soulkey", 0);
 		put("item.cross", 0);
 		//pots
-		put("item.tinctureofice", 1);
+		put("item.tinctureofice", 0);
 		
 		this.game = game;
 		this.input = input;

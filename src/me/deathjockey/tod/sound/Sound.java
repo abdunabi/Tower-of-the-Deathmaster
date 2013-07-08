@@ -16,6 +16,8 @@ public class Sound {
 	public static final Sound die = new Sound("/die.wav");
 	public static final Sound criticalHit = new Sound("/critical.wav");
 	public static final Sound parry = new Sound("/parry.wav");
+	public static final Sound event = new Sound("/event.wav");
+	
 	
 	private AudioClip clip;
 

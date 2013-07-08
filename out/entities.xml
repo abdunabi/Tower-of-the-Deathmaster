@@ -16,7 +16,7 @@
 	
 	<entity key="SoulSkeleton" sprite="8,15" name="Skeleton Shadowmancer" hp="1000" attack="740" defense="550" exp="28" gold="38" />
 	
-	<entity key="Undead" sprite="6,12" name="Undead" hp="325" attack="105" defense="60" exp="7" gold="11" />
+	<entity key="Undead" sprite="6,12" name="Undead" hp="325" attack="95" defense="50" exp="7" gold="11" />
 	<entity key="UndeadWarrior" sprite="6,13" name="Undead Warrior" hp="725" attack="240" defense="110" exp="10" gold="15" />
 	<entity key="UndeadCorruptor" sprite="2,15" name="Undead Corruptor" hp="1050" attack="250" defense="145" exp="15" gold="35" />
 	
@@ -26,29 +26,29 @@
 	
 	<entity key="ChaosMage" sprite="4,15" name="Chaos Necromancer" hp="4200" attack="955" defense="620" exp="50" gold="75" />
 	
-	<entity key="GemGolem" sprite="10,8" name="Gem Golem" hp="455" attack="100" defense="75" exp="7" gold="9" />
-	<entity key="SapphireGolem" sprite="10,9" name="Sapphire Golem" hp="650" attack="260" defense="130" exp="24" gold="24" />
-	<entity key="RubyGolem" sprite="10,10" name="Ruby Golem" hp="1825" attack="385" defense="350" exp="35" gold="50" />
+	<entity key="GemGolem" sprite="10,8" name="Weak Golem" hp="455" attack="100" defense="75" exp="7" gold="9" />
+	<entity key="SapphireGolem" sprite="10,9" name="Enchanted Golem" hp="650" attack="260" defense="130" exp="24" gold="24" />
+	<entity key="RubyGolem" sprite="10,10" name="Molten Golem" hp="1825" attack="385" defense="350" exp="35" gold="50" />
 	
-	<entity key="Knight" sprite="8,8" name="Marching Knight" hp="625" attack="145" defense="80" exp="13" gold="23" />
-	<entity key="CaptainKnight" sprite="8,9" name="Captain Knight" hp="1000" attack="280" defense="130" exp="23" gold="35" />
-	<entity key="BlazingKnight" sprite="8,10" name="Blazing Knight" hp="1225" attack="380" defense="200" exp="30" gold="45" />
+	<entity key="Knight" sprite="8,8" name="Duke" hp="625" attack="145" defense="80" exp="13" gold="23" />
+	<entity key="CaptainKnight" sprite="8,9" name="Captain" hp="1000" attack="280" defense="130" exp="23" gold="35" />
+	<entity key="BlazingKnight" sprite="8,10" name="Crimson Champion" hp="1225" attack="380" defense="200" exp="30" gold="45" />
 	
-	<entity key="RockConstruct" sprite="6,14" hp="250" name="Rock Construct" attack="120" defense="80" exp="8" gold="13" />
-	<entity key="VolcanicConstruct" sprite="14,11" hp="500" name="Volcanic Construct" attack="740" defense="600" exp="21" gold="55" />
+	<entity key="RockConstruct" sprite="6,14" hp="250" name="Earth Golem" attack="100" defense="65" exp="8" gold="13" />
+	<entity key="VolcanicConstruct" sprite="14,11" hp="500" name="Steel Golem" attack="740" defense="600" exp="21" gold="55" />
 	
 	<entity key="DuelWielder" sprite="10,11" name="Duel Wielder" hp="600" attack="325" defense="225" exp="16" gold="45" />
 	<entity key="DarkWalker" sprite="14,9" name="Dark Walker" hp="1000" attack="1500" defense="1350" exp="32" gold="80" />
-	<entity key="VoidWalker" sprite="6,15" name="Void Walker" hp="650" attack="225" defense="100" exp="15" gold="27" />
-	<entity key="DemonWalker" sprite="6,8" name="Demon Walker" hp="1200" attack="1370" defense="820" exp="30" gold="60" />
+	<entity key="VoidWalker" sprite="6,15" name="Planewalker" hp="650" attack="225" defense="100" exp="15" gold="27" />
+	<entity key="DemonWalker" sprite="6,8" name="Deathwalker" hp="1200" attack="1370" defense="820" exp="30" gold="60" />
 	
 	<entity key="ClubGoblin" sprite="16,8" name="Goblin Clubwielder" hp="1200" attack="875" defense="590" exp="16" gold="20" />
 	<entity key="AxeGoblin" sprite="16,9" name="Goblin Axeman" hp="1800" attack="900" defense="610" exp="18" gold="21" />
 	<entity key="WarriorGoblin" sprite="16,10" name="Goblin Warrior" hp="2000" attack="945" defense="650" exp="22" gold="25" />
 	<entity key="MasterGoblin" sprite="16,11" name="Goblin Swordmaster" hp="2500" attack="1000" defense="720" exp="25" gold="30" />
 	
-	<entity key="CrystalSorcerer" sprite="18,8" name="Crystal Sorcerer" hp="1000" attack="800" defense="550" exp="17" gold="20" />
-	<entity key="DeepSorcerer" sprite="18,9" name="Deep Sorcerer" hp="1500" attack="860" defense="700" exp="22" gold="24" />
+	<entity key="CrystalSorcerer" sprite="18,8" name="Crystal Sorceress" hp="1000" attack="800" defense="550" exp="17" gold="20" />
+	<entity key="DeepSorcerer" sprite="18,9" name="Charm Sorceress" hp="1500" attack="860" defense="700" exp="22" gold="24" />
 	<entity key="DarkWitch" sprite="18,10" name="Dark Witch" hp="2225" attack="1020" defense="885" exp="28" gold="31" />
 	<entity key="HellfireWitch" sprite="18,11" name="Hellfire Conductor" hp="3000" attack="1400" defense="1000" exp="30" gold="45" />
 	
@@ -57,8 +57,8 @@
 	<entity key="GuardianCarcass" sprite="18,14" name="Guardian Carcass" hp="3000" attack="1850" defense="1350" exp="35" gold="50" />
 	<entity key="LichKing" sprite="18,15" name="Lich King" hp="4500" attack="2000" defense="1850" exp="40" gold="80" />
 	
-	<entity key="EmeraldKnight" sprite="20,8" name="Cursed Emerald Knight" hp="4000" attack="2200" defense="2250" exp="45" gold="60" />
-	<entity key="GoldKnight" sprite="20,9" name="Unholy Champion" hp="8000" attack="2700" defense="2400" exp="50" gold="80" />
+	<entity key="EmeraldKnight" sprite="20,8" name="Demonic Slayer" hp="4000" attack="2200" defense="2250" exp="45" gold="60" />
+	<entity key="GoldKnight" sprite="20,9" name="Glittering Champion" hp="8000" attack="2700" defense="2400" exp="50" gold="80" />
 	<entity key="SoulWielder" sprite="20,10" name="Soul Duel-Wielder" hp="3200" attack="2000" defense="1700" exp="39" gold="50" />
 	<entity key="CursedKnight" sprite="20,11" name="Cursed Hollow Armor" hp="3000" attack="1850" defense="1400" exp="29" gold="30" />
 	
@@ -90,9 +90,9 @@
 	
 	<entity key="Archdemon" sprite="10,15" name="Archdemon Melphas" hp="2500" attack="2935" defense="2800" exp="55" gold="100" />
 	
-	<entity key="SoulKnight" sprite="8,11" name="Soul Knight" hp="5000" attack="3735" defense="3400" exp="35" gold="70" />
-	<entity key="SoulMage" sprite="6,11" name="Dark Caster" hp="4850" attack="3950" defense="3250" exp="45" gold="75" />
-	<entity key="DiabolicKnight" sprite="4,11" name="Diabolic Knight" hp="5500" attack="3520" defense="3300" exp="32" gold="50" />
+	<entity key="SoulKnight" sprite="8,11" name="Dark Guardian" hp="5000" attack="3735" defense="3400" exp="35" gold="70" />
+	<entity key="SoulMage" sprite="6,11" name="Dark Windbreaker" hp="4850" attack="3950" defense="3250" exp="45" gold="75" />
+	<entity key="DiabolicKnight" sprite="4,11" name="Diabolic Elite" hp="5500" attack="3520" defense="3300" exp="32" gold="50" />
 	
 	<entity key="RottenAbomination" sprite="2,15" name="Rotten Abomination" hp="1775" attack="1450" defense="1250" exp="55" gold="70" />
 	

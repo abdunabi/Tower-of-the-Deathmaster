@@ -8,12 +8,12 @@
 		<pixel rgb="102,45,145" bind="5" />
 	</define>
 	<level floor="1">
+		<entity type="NPC" sprite="5" title="Event!" oninteract="As you draw near the staircase#you hear sounds of creatures#from above...##You see bones littered through#out the place.##The monsters must've used the#staircase as a trash pit."  remove="1" x="5" y="4" />
 		<entity type="StairsUp" x="5" y="4" tx="5" ty="5" />
 		<entity type="Door" color="2" x="6" y="5" />
 		<item type="MasterKey" x="6" y="7" />
 		<entity type="Door" color="10" x="4" y="11" />
 		<entity type="StairsDown" x="3" y="11" tx="2" ty="11" />
-<!-- 		<entity type="NPC" sprite="0" title="Demo NPC" oninteract="Thanks for playing, but this#is the end of the trial!" remove="0" x="3" y="11" /> -->
 		<entity type="Door" color="9" x="3" y="11" />
 		<entity type="Door" color="8" require="5,7" x="6" y="6" />
 		<entity type="Door" color="4" x="5" y="10" />
@@ -89,6 +89,8 @@
 	<level floor="3">
 		<entity type="StairsUp" x="2" y="0" tx="3" ty="0" />
 		<entity type="StairsDown" x="11" y="9" tx="10" ty="9" />
+		
+		<entity type="NPC" sprite="5" title="Event!" oninteract="Heat from the boiling magma#radiates throughout this room.#Many doors are sealed,#you feel a strong evil#presence here...###After some investigation, you#realized you couldn't take#on these monsters now.#There's nothing you can do#here."  remove="1" x="8" y="9" />
 		
 		<entity type="Door" color="8" require="0,1" x="7" y="8" />
 		<entity type="Door" color="3" x="10" y="10" />
@@ -436,7 +438,7 @@
 		<entity type="Necromancer" x="3" y="1" />
 		<entity type="UndeadWarrior" x="4" y="0" />
 		<entity type="UndeadWarrior" x="4" y="2" />
-		
+		<entity type="NPC" sprite="5" title="Crimson Champion says" oninteract="I hold the key to#magma chambers.##It is forbidden for#humans like you to enter#this place.##BEGONE!!"  remove="1" x="1" y="9" />
 	</level>
 	
 	<level floor="8">
@@ -444,6 +446,8 @@
 		<entity type="StairsDown" x="0" y="5" tx="0" ty="6" />
 		<entity type="StairsDown" x="6" y="12" tx="6" ty="11" />
 		<entity type="StairsUp" x="2" y="9" tx="2" ty="8" />
+		
+		<entity type="NPC" sprite="5" title="Event!" oninteract="You notice something odd#as you step onto this tile.#There is a 'click' sound#coming from the automatic#door behind..."  remove="1" x="3" y="5" />
 		
 		<entity type="Door" color="4" x="9" y="3" />
 		<entity type="Door" color="0" x="11" y="1" />
@@ -605,7 +609,7 @@
 		<entity type="Door" color="1" x="1" y="4" />
 		<entity type="Door" color="0" x="3" y="1" />
 		<entity type="Door" color="0" x="5" y="7" />
-<!-- 		<entity type="Door" color="8" require="6,6-6,4-4,4-4,6-0,0-11,0-0,10-11,12" x="7" y="5" /> -->
+		<entity type="Door" color="8" require="6,6-6,4-4,4-4,6-0,0-11,0-0,10-11,12" x="7" y="5" />
 	</level>
 	
 	<level floor="10">
@@ -631,7 +635,8 @@
 		<entity type="UnderworldGuard" x="7" y="6" />
 		
 		<entity type="NPC" sprite="3" title="Fairy" oninteract="You made it! Well,looks#like this is the end of#the common section of the to-#wer. The floors above is called#'Soul Level' because it#is filled with the best#guards in the tower.##You'll need to be much stron-#ger to fight them. Take the#key and go all the way#down! My cross can wait." remove="1" x="10" y="4" />
-		
+		<entity type="NPC" sprite="5" title="Event!" oninteract="As you enter the ench#anted chambers, you see#Archdemon Melphas, the#gatekeeper to the soul#level.##You feel intimidated,#better take the key and#leave!"  remove="1" x="8" y="5" />
+		<entity type="NPC" sprite="5" title="Event!" oninteract="Now that you have acqu#ired the rusty key. You#can access a secret section#underneath the tower.#Go to Floor 0 and#open the sealed wall!"  remove="1" x="8" y="3" />
 		<entity type="Door" color="2" x="9" y="5" />
 		<entity type="Door" color="8" require="4,4-4,6" x="2" y="5" />
 		<entity type="Door" color="8" require="7,5" x="5" y="5" />
@@ -696,7 +701,8 @@
 		<entity type="Door" x="3" y="6" color="2" />
 		<entity type="Door" x="8" y="6" color="1" />
 		<entity type="NPC" sprite="3" title="Fairy" x="4" y="6" oninteract="You made it! So here's the#underground section of the tow#er.These are old monsters who#used to be in the soul levels.#But I guess eventually the#Deathmaster found stronger#ones to replace them.##They are still very strong,#be careful!#I heard the princess is kept#on the bottomost floor!" remove="1" />
-		
+<!-- 		<entity type="NPC" sprite="5" title="Event!" oninteract="As you approach the#underground staircase, you#sense tranquility.##The monsters below sounded#quiet and peaceful...#You can't tell what awaits..."  remove="1" x="9" y="1" /> -->
+		<entity type="NPC" sprite="5" title="Event!" oninteract="A mysterious force pushes#back...##You've done well getting#to here!#Looks like this is as far#as this version of the game#can be played.##Stay tuned for updates!"  remove="0" x="9" y="1" />
 		<item type="RedKey" x="4" y="5" />
 		<item type="RedKey" x="4" y="7" />
 		<item type="BlueKey" x="5" y="5" />
